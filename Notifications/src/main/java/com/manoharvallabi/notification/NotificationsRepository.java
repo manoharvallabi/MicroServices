@@ -1,4 +1,4 @@
-package com.manoharvallabi;
+package com.manoharvallabi.notification;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

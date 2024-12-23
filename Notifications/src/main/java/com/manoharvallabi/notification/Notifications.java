@@ -1,4 +1,4 @@
-package com.manoharvallabi;
+package com.manoharvallabi.notification;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

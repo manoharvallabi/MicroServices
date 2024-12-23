@@ -1,4 +1,4 @@
-package com.manoharvallabi;
+package com.manoharvallabi.notification;
 
 
 import com.manoharvallabi.clients.notifications.NotificationRequest;

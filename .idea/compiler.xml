@@ -12,6 +12,7 @@
         <module name="Customer" />
         <module name="Notifications" />
         <module name="Eureka-server" />
+        <module name="amqp" />
       </profile>
     </annotationProcessing>
   </component>

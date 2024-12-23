@@ -1,22 +1,25 @@
 package com.manoharvallabi.customer;
 
+import com.manoharvallabi.amqp.RabbitMQMessageProducer;
 import com.manoharvallabi.clients.fraud.FraudCheckResponse;
 import com.manoharvallabi.clients.fraud.FraudClient;
 import com.manoharvallabi.clients.notifications.NotificationClient;
 import com.manoharvallabi.clients.notifications.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.apache.catalina.Store;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
+@ComponentScan(basePackages = {"com.manoharvallabi.amqp","com.manoharvallabi.customer"})
 public class CustomerService {
 
     private final RestTemplate restTemplate;
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
-    private final NotificationClient notificationClient;
+    private final RabbitMQMessageProducer rabbitMQMessageProducer;
     public void register(CustomerRequest customerRequest) {
 
         Customer customer = Customer.builder()
@@ -36,9 +39,11 @@ public class CustomerService {
                         .id(customer.getId())
                         .message("Hi "+customer.getFirstName()+" welcome")
                         .email(customer.getEmail())
+                        .sender("MicroServices")
                         .build();
 
-    notificationClient.sendNotification(notificationRequest);
+
+        rabbitMQMessageProducer.publish(notificationRequest,"internal.exchange","internal.notification.routing-key");
 
     }
 

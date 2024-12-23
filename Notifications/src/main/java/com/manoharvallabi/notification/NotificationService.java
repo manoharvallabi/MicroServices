@@ -1,8 +1,7 @@
-package com.manoharvallabi;
+package com.manoharvallabi.notification;
 
 import com.manoharvallabi.clients.notifications.NotificationRequest;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
