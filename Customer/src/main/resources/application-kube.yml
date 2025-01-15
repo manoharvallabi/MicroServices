@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: customer
+  zipkin:
+    base-url: http://zipkin:9411
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/customer
+    username: manoharvallabi
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  rabbitmq:
+    addresses: rabbitmq:5672
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    fetch-registry: false
+    register-with-eureka: false
+    enabled: false

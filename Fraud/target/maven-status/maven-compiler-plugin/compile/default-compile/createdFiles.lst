@@ -4,4 +4,3 @@ com/manoharvallabi/fraud/FraudCheckService.class
 com/manoharvallabi/fraud/FraudCheckHistory.class
 com/manoharvallabi/fraud/FraudApplication.class
 com/manoharvallabi/fraud/FraudController.class
-com/manoharvallabi/fraud/FraudCheckResponse.class

@@ -1,1 +1,5 @@
+com/manoharvallabi/clients/notifications/NotificationClient.class
 com/manoharvallabi/clients/fraud/FraudClient.class
+com/manoharvallabi/clients/fraud/FraudCheckResponse.class
+com/manoharvallabi/clients/notifications/NotificationRequest.class
+com/manoharvallabi/clients/notifications/NotificationRequest$NotificationRequestBuilder.class

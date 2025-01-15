@@ -19,6 +19,7 @@ public class FraudCheckService {
                         .isFraudster(false)
                         .createdAt(LocalDateTime.now())
                         .build());
+
     return false;
     }
 }
